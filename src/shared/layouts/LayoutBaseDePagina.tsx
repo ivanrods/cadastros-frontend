@@ -13,6 +13,7 @@ import { useDrawerContext } from "../contexts";
 interface ILayoutBaseDePaginaProps {
   titulo: string;
   barraDeFerramentas?: ReactNode;
+  children: ReactNode; 
 }
 export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({
   children,
