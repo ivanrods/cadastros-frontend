@@ -1,4 +1,3 @@
-
 import {
   Avatar,
   Box,
@@ -14,10 +13,12 @@ import {
 } from "@mui/material";
 import { useAppThemeContext, useDrawerContext } from "../../contexts";
 import { useMatch, useNavigate, useResolvedPath } from "react-router-dom";
+import { ReactNode } from "react";
+import { DarkMode } from "@mui/icons-material";
 
 interface IListItemLinkProps {
   to: string;
-  icon: string;
+  icon: ReactNode;
   label: string;
   onClick: (() => void) | undefined;
 }
@@ -55,7 +56,7 @@ const MenuLateral: React.FC<IAppThemeProvidersProps> = ({ children }) => {
   const theme = useTheme();
   const smDown = useMediaQuery(theme.breakpoints.down("sm"));
   const { isDrawerOpen, toggleDrawerOpen, drawerOptions } = useDrawerContext();
-  const {toggleTheme} = useAppThemeContext()
+  const { toggleTheme } = useAppThemeContext();
   return (
     <>
       <Drawer
@@ -95,15 +96,17 @@ const MenuLateral: React.FC<IAppThemeProvidersProps> = ({ children }) => {
               ))}
             </List>
           </Box>
-          <Box >
+          <Box>
             <List component="nav">
-             <ListItemButton onClick={toggleTheme}>
-              <ListItemIcon>
-                <Icon>DarkModeIcon</Icon>
-              </ListItemIcon>
-              <ListItemText primary='Alternar tema'/>
-             </ListItemButton>
-             </List>
+              <ListItemButton onClick={toggleTheme}>
+                <ListItemIcon>
+                  <Icon>
+                    <DarkMode></DarkMode>
+                  </Icon>
+                </ListItemIcon>
+                <ListItemText primary="Alternar tema" />
+              </ListItemButton>
+            </List>
           </Box>
         </Box>
       </Drawer>
