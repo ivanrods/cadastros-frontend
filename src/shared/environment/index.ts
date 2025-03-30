@@ -1,6 +1,6 @@
 export const Environment = {
     
-    LIMITE_DE_LINHA: 10,
+    LIMITE_DE_LINHA: 5,
 
     INPUT_DE_BUSCA: 'Pesquisar...',
 
