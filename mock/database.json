@@ -78,5 +78,15 @@
       "email": "ivan@email.com",
       "cidadeId": "1"
     }
+  ],
+  "cidades": [
+    {
+      "id": 1,
+      "nome": "Parnaíba"
+    },
+    {
+      "nome": "Buriti dos Lopes",
+      "id": 2
+    }
   ]
 }
