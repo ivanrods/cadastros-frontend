@@ -8,9 +8,9 @@
     },
     {
       "id": 5,
-      "cidadeId": 1,
+      "nomeCompleto": "Alfredo Silva",
       "email": "alfredo@gmail.com",
-      "nomeCompleto": "Alfredo Silva"
+      "cidadeId": 1
     },
     {
       "id": 6,
@@ -87,6 +87,14 @@
     {
       "nome": "Buriti dos Lopes",
       "id": 2
+    },
+    {
+      "nome": "Cocal",
+      "id": 3
+    },
+    {
+      "nome": "Caxingó",
+      "id": 4
     }
   ]
 }

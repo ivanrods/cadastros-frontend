@@ -7,6 +7,7 @@ import * as yup from "yup";
 import { VTextField, VForm, useVForm, IVformErros } from "../../shared/forms";
 
 import { Box, Grid, LinearProgress, Paper, Typography } from "@mui/material";
+import { AutoCompleteCidade } from "./components/AutoCompleteCidade";
 
 interface IformData {
   email: string;
@@ -44,7 +45,7 @@ export const DetalheDePessoas: React.FC = () => {
         }
       });
     } else {
-      formRef.current?.setData({ email: "", nomeCompleto: "", cidadeId: "" });
+      formRef.current?.setData({ email: "", nomeCompleto: "", cidadeId: undefined });
     }
   }, [id]);
 
@@ -164,12 +165,7 @@ export const DetalheDePessoas: React.FC = () => {
 
             <Grid container item direction="row" spacing={2}>
               <Grid item xs={12} md={6} lg={4} xl={2}>
-                <VTextField
-                  fullWidth
-                  label="Cidade"
-                  name="cidadeId"
-                  disabled={isLoading}
-                />
+                <AutoCompleteCidade isExternalLoading={isLoading}/>
               </Grid>
             </Grid>
           </Grid>

@@ -45,7 +45,6 @@ export const ListagemDePessoas: React.FC = () => {
   useEffect(() => {
     setIsLoading(true);
     debounce(() => {
-      console.log("Chamando API com busca:", busca);
     });
     debounce(() => {
       PessoasService.getAll(pagina, busca).then((result) => {
