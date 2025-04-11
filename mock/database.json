@@ -96,5 +96,8 @@
       "nome": "Caxingó",
       "id": 4
     }
-  ]
+  ],
+  "auth": {
+    "acceessToken": "aaaaaaaaa.bbbbbbbb.cccccccc"
+  }
 }
