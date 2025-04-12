@@ -11,10 +11,10 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { useAppThemeContext, useDrawerContext } from "../../contexts";
+import { useAppThemeContext, useAuthCotext, useDrawerContext } from "../../contexts";
 import { useMatch, useNavigate, useResolvedPath } from "react-router-dom";
 import { ReactNode } from "react";
-import { DarkMode } from "@mui/icons-material";
+import { DarkMode, Logout } from "@mui/icons-material";
 
 interface IListItemLinkProps {
   to: string;
@@ -57,6 +57,7 @@ const MenuLateral: React.FC<IAppThemeProvidersProps> = ({ children }) => {
   const smDown = useMediaQuery(theme.breakpoints.down("sm"));
   const { isDrawerOpen, toggleDrawerOpen, drawerOptions } = useDrawerContext();
   const { toggleTheme } = useAppThemeContext();
+  const {logout} = useAuthCotext()
   return (
     <>
       <Drawer
@@ -105,6 +106,14 @@ const MenuLateral: React.FC<IAppThemeProvidersProps> = ({ children }) => {
                   </Icon>
                 </ListItemIcon>
                 <ListItemText primary="Alternar tema" />
+              </ListItemButton>
+              <ListItemButton onClick={logout}>
+                <ListItemIcon>
+                  <Icon>
+                    <Logout></Logout>
+                  </Icon>
+                </ListItemIcon>
+                <ListItemText primary="Sair" />
               </ListItemButton>
             </List>
           </Box>

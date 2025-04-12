@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
 import {
   Box,
-  Icon,
   IconButton,
   Theme,
   Typography,
@@ -9,11 +8,11 @@ import {
   useTheme,
 } from "@mui/material";
 import { useDrawerContext } from "../contexts";
-
+import MenuIcon from "@mui/icons-material/Menu"; 
 interface ILayoutBaseDePaginaProps {
   titulo: string;
   barraDeFerramentas?: ReactNode;
-  children: ReactNode; 
+  children: ReactNode;
 }
 export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({
   children,
@@ -36,7 +35,7 @@ export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({
       >
         {smDown && (
           <IconButton onClick={toggleDrawerOpen}>
-            <Icon>menu</Icon>
+             <MenuIcon />
           </IconButton>
         )}
         <Typography
