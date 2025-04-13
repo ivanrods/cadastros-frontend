@@ -12,7 +12,7 @@ const auth = async (
     const { data } = await Api.get("/auth", { data: { email, password } });
 
     if (data) {
-      return data.id;
+      return data;
     }
 
     return new Error("Erro no login.");
@@ -23,4 +23,7 @@ const auth = async (
     );
   }
 };
-export const AuthService = {auth,};
+
+export const AuthService = {
+  auth,
+};

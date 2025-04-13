@@ -11,7 +11,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { useAppThemeContext, useAuthCotext, useDrawerContext } from "../../contexts";
+import { useAppThemeContext, useAuthContext, useDrawerContext } from "../../contexts";
 import { useMatch, useNavigate, useResolvedPath } from "react-router-dom";
 import { ReactNode } from "react";
 import { DarkMode, Logout } from "@mui/icons-material";
@@ -52,12 +52,12 @@ interface IAppThemeProvidersProps {
   children: React.ReactNode;
 }
 
-const MenuLateral: React.FC<IAppThemeProvidersProps> = ({ children }) => {
+export const MenuLateral: React.FC<IAppThemeProvidersProps> = ({ children }) => {
   const theme = useTheme();
   const smDown = useMediaQuery(theme.breakpoints.down("sm"));
   const { isDrawerOpen, toggleDrawerOpen, drawerOptions } = useDrawerContext();
   const { toggleTheme } = useAppThemeContext();
-  const {logout} = useAuthCotext()
+  const {logout} = useAuthContext()
   return (
     <>
       <Drawer
