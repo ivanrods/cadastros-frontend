@@ -4,7 +4,7 @@ Cadastros é uma aplicação **front-end** desenvolvida com **React e TypeScript
 
 ## 🎨 Demonstração  
 
-
+![Screenshot From 2025-04-12 09-04-13](https://github.com/user-attachments/assets/0592bbfb-16ec-4e3f-9776-a3f6ff78df66)
 
 ## 🚀 Funcionalidades  
 
@@ -22,7 +22,9 @@ Cadastros é uma aplicação **front-end** desenvolvida com **React e TypeScript
 - ⚛️ **React** para a construção da interface  
 - 🔷 **TypeScript** para tipagem segura  
 - 🎨 **Material UI** para estilização  
-- 🔄 **JSON Server** como API fake  
+- 🔄 **JSON Server** como API fake
+-  ⚡ **Axios** para requisições HTTP
+- ✅ **Yup** para validação de dados  
 
 ## 📂 Como rodar o projeto  
 
