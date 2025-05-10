@@ -1,3 +1,5 @@
+import { AxiosError } from "axios";
+
 import { Api } from "../axios-config";
 
 interface IAuth {
@@ -9,7 +11,7 @@ const auth = async (
   password: string
 ): Promise<IAuth | Error> => {
   try {
-    const { data } = await Api.get("/auth", { data: { email, password } });
+    const { data } = await Api().post("/entrar", { email, senha: password });
 
     if (data) {
       return data;
@@ -19,7 +21,7 @@ const auth = async (
   } catch (error) {
     console.error(error);
     return new Error(
-      (error as { message: string }).message || "Erro no login."
+      (error as AxiosError).response?.data.errors.default || "Erro no login."
     );
   }
 };

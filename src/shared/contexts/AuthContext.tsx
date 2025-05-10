@@ -8,6 +8,7 @@ import {
 } from "react";
 
 import { AuthService } from "../services/api/auth/AuthService";
+import { PessoasService } from "../services/api/pessoas/PessoasService";
 
 interface IAuthContextData {
   logout: () => void;
@@ -22,26 +23,30 @@ const LOCAL_STORAGE_KEY__ACCESS_TOKEN = "APP_ACCESS_TOKEN";
 interface IAuthProviderProps {
   children: React.ReactNode;
 }
-
 export const AuthProvider: React.FC<IAuthProviderProps> = ({ children }) => {
   const [accessToken, setAccessToken] = useState<string>();
 
   useEffect(() => {
-    const storedAccessToken = localStorage.getItem(LOCAL_STORAGE_KEY__ACCESS_TOKEN);
-
-    if (storedAccessToken) {
-      setAccessToken(storedAccessToken);
+    const accessToken = localStorage.getItem(LOCAL_STORAGE_KEY__ACCESS_TOKEN);
+  
+    if (accessToken) {
+      setAccessToken(accessToken); 
+      PessoasService.getAll();
     } else {
       setAccessToken(undefined);
     }
   }, []);
+  
 
   const handleLogin = useCallback(async (email: string, password: string) => {
     const result = await AuthService.auth(email, password);
     if (result instanceof Error) {
       return result.message;
     } else {
-      localStorage.setItem(LOCAL_STORAGE_KEY__ACCESS_TOKEN, result.accessToken);
+      localStorage.setItem(
+        LOCAL_STORAGE_KEY__ACCESS_TOKEN,
+        JSON.stringify(result.accessToken)
+      );
       setAccessToken(result.accessToken);
     }
   }, []);
