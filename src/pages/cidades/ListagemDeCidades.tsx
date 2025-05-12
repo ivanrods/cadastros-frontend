@@ -134,12 +134,12 @@ export const ListagemDeCidades: React.FC = () => {
                 </TableCell>
               </TableRow>
             )}
-            {totalCount > 0 && totalCount > Environment.LIMITE_DE_LINHA && (
+            {totalCount > 0 && totalCount > Environment.LIMITE_DE_LINHAS && (
               <TableRow>
                 <TableCell colSpan={3}>
                   <Pagination
                     page={pagina}
-                    count={Math.ceil(totalCount / Environment.LIMITE_DE_LINHA)}
+                    count={Math.ceil(totalCount / Environment.LIMITE_DE_LINHAS)}
                     onChange={(_, newPage) =>
                       setSearchParams(
                         { busca, pagina: newPage.toString() },
