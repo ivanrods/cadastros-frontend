@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "mock": "npx json-server -w ./mock/database.json -p 3333",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

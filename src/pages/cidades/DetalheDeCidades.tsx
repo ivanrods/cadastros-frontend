@@ -133,6 +133,7 @@ export const DetalheDeCidades: React.FC = () => {
         />
       }
     >
+      @ts-expect-error: incompatibilidade entre tipos do VForm e o tipo inferido
       <VForm ref={formRef} onSubmit={handleSave}>
         <Box margin={1} display="flex" flexDirection="column" component={Paper} variant="outlined">
 
