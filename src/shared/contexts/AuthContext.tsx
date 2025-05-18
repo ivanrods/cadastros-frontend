@@ -28,15 +28,14 @@ export const AuthProvider: React.FC<IAuthProviderProps> = ({ children }) => {
 
   useEffect(() => {
     const accessToken = localStorage.getItem(LOCAL_STORAGE_KEY__ACCESS_TOKEN);
-  
+
     if (accessToken) {
-      setAccessToken(accessToken); 
+      setAccessToken(accessToken);
       PessoasService.getAll();
     } else {
       setAccessToken(undefined);
     }
   }, []);
-  
 
   const handleLogin = useCallback(async (email: string, password: string) => {
     const result = await AuthService.auth(email, password);
