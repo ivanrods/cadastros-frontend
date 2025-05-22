@@ -80,7 +80,7 @@ export const MenuLateral: React.FC<IAppThemeProvidersProps> = ({ children }) => 
           >
             <Avatar
               sx={{ height: theme.spacing(12), width: theme.spacing(12) }}
-              src="https://avatars.githubusercontent.com/u/67488687?v=4"
+              src="./profile.jpg"
             />
           </Box>
           <Divider />

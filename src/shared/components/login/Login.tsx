@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Box,
   Button,
@@ -19,7 +20,7 @@ const loginSchema = yup.object().shape({
 });
 
 interface ILoginProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 export const Login: React.FC<ILoginProps> = ({ children }) => {
   const { isAuthenticated, login } = useAuthContext();
@@ -115,7 +116,18 @@ export const Login: React.FC<ILoginProps> = ({ children }) => {
               Entrar
             </Button>
           </Box>
+          
         </CardActions>
+        <Box textAlign="center" mt={2}>
+            <Typography variant="body2">
+              <Link
+                to="/cadastrar"
+                style={{ textDecoration: "none", color: "#868585" }}
+              >
+                Cadastre-se
+              </Link>
+            </Typography>
+          </Box>
       </Card>
     </Box>
   );

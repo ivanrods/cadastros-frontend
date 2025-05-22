@@ -1,6 +1,6 @@
 # 🏙️ Cadastros - Gerenciamento de Pessoas e Cidades  
 
-Cadastros é uma aplicação **front-end** desenvolvida com **React e TypeScript**, que permite cadastrar e consultar **pessoas e cidades** de forma simples e eficiente. Utiliza **JSON Server** como API fake para armazenar os dados.  
+Cadastros é uma aplicação **front-end** desenvolvida com **React e TypeScript**, que permite cadastrar e consultar **pessoas e cidades** de forma simples e eficiente. Conectado com a API: https://github.com/ivanrods/cadastros-backend
 
 ## 🎨 Demonstração  
 
@@ -15,14 +15,13 @@ Cadastros é uma aplicação **front-end** desenvolvida com **React e TypeScript
 
 ## 🔗 Acesse o projeto  
 
-[![Ver Demo](https://img.shields.io/badge/Demo-Ao%20vivo-blue?style=for-the-badge&logo=vercel)](#)  
+[![Ver Demo](https://img.shields.io/badge/Demo-Ao%20vivo-blue?style=for-the-badge&logo=vercel)](https://cadastros-frontend.vercel.app/)  
 
 ## 🛠️ Tecnologias Utilizadas  
 
 - ⚛️ **React** para a construção da interface  
 - 🔷 **TypeScript** para tipagem segura  
 - 🎨 **Material UI** para estilização  
-- 🔄 **JSON Server** como API fake
 -  ⚡ **Axios** para requisições HTTP
 - ✅ **Yup** para validação de dados  
 
@@ -31,7 +30,6 @@ Cadastros é uma aplicação **front-end** desenvolvida com **React e TypeScript
 Siga os passos abaixo para executar o projeto localmente:  
 
 - npm install
-- npm run mock
 - npm run dev
 
 1️⃣ **Clone o repositório**  
