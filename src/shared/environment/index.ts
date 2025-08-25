@@ -15,5 +15,5 @@ export const Environment = {
     /**
      * Url base de consultado dos dados dessa aplicação
      */
-    URL_BASE: 'https://cadastros-backend-production.up.railway.app/',
+    URL_BASE: 'https://cadastros-backend.onrender.com/',
   };
