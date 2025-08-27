@@ -66,68 +66,67 @@ export const Login: React.FC<ILoginProps> = ({ children }) => {
       justifyContent="center"
     >
       <Card>
-        <CardContent>
-          <Box display="flex" flexDirection="column" gap={2} width={250}>
-            <Typography variant="h6" align="center">
-              Identifique-se
-            </Typography>
+        <Box padding={2}>
+          <CardContent>
+            <Box display="flex" flexDirection="column" gap={2} width={250}>
+              <Typography variant="h6" align="center">
+                Login
+              </Typography>
 
-            <TextField
-              fullWidth
-              type="email"
-              label="Email"
-              value={email}
-              disabled={isLoading}
-              error={!!emailError}
-              helperText={emailError}
-              onKeyDown={() => setEmailError("")}
-              onChange={(e) => setEmail(e.target.value)}
-            />
+              <TextField
+                fullWidth
+                type="email"
+                label="Email"
+                value={email}
+                disabled={isLoading}
+                error={!!emailError}
+                helperText={emailError}
+                onKeyDown={() => setEmailError("")}
+                onChange={(e) => setEmail(e.target.value)}
+              />
 
-            <TextField
-              fullWidth
-              label="Senha"
-              type="password"
-              value={password}
-              disabled={isLoading}
-              error={!!passwordError}
-              helperText={passwordError}
-              onKeyDown={() => setPasswordError("")}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </Box>
-        </CardContent>
-        <CardActions>
-          <Box width="100%" display="flex" justifyContent="center">
-            <Button
-              variant="contained"
-              disabled={isLoading}
-              onClick={handleSubmit}
-              endIcon={
-                isLoading ? (
-                  <CircularProgress
-                    variant="indeterminate"
-                    color="inherit"
-                    size={20}
-                  />
-                ) : undefined
-              }
-            >
-              Entrar
-            </Button>
-          </Box>
-          
-        </CardActions>
-        <Box textAlign="center" mt={2}>
-            <Typography variant="body2">
-              <Link
-                to="/cadastrar"
-                style={{ textDecoration: "none", color: "#868585" }}
+              <TextField
+                fullWidth
+                label="Senha"
+                type="password"
+                value={password}
+                disabled={isLoading}
+                error={!!passwordError}
+                helperText={passwordError}
+                onKeyDown={() => setPasswordError("")}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Box>
+          </CardContent>
+          <CardActions>
+            <Box width="100%" display="flex" justifyContent="center">
+              <Button
+                variant="contained"
+                disabled={isLoading}
+                onClick={handleSubmit}
+                endIcon={
+                  isLoading ? (
+                    <CircularProgress
+                      variant="indeterminate"
+                      color="inherit"
+                      size={20}
+                    />
+                  ) : undefined
+                }
               >
-                Cadastre-se
-              </Link>
-            </Typography>
-          </Box>
+                Entrar
+              </Button>
+            </Box>
+          </CardActions>
+          <Typography variant="body2" align="center">
+            <Link
+              to="/cadastrar"
+              style={{ textDecoration: "none", color: "#858383" }}
+            >
+              Cadastrar
+            </Link>
+          </Typography>
+        </Box>
       </Card>
     </Box>
   );
